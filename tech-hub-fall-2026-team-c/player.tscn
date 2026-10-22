@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cse1b67xx7w6o"]
+
+[ext_resource type="Texture2D" uid="uid://upyhdc4rfvb2" path="res://sprites/wizard.jpg" id="1_4flbx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kg2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4flbx")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sh265"]
+radius = 344.99997
+height = 1059.9999
+
+[node name="Player" type="Area2D" unique_id=675699041]
+scale = Vector2(0.2, 0.2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2131376458]
+sprite_frames = SubResource("SpriteFrames_6kg2q")
+animation = &"Idle"
+
+[node name="Sprite2D" type="CollisionShape2D" parent="." unique_id=1000380714]
+shape = SubResource("CapsuleShape2D_sh265")
