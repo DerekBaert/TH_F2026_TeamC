@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cyswom6wlvats"]
+
+[ext_resource type="Script" uid="uid://dg0ll6p4comb3" path="res://timer.gd" id="1_qdhxh"]
+
+[node name="Timer" type="Timer" unique_id=128801201]
+wait_time = 0.5
+script = ExtResource("1_qdhxh")
+
+[connection signal="timeout" from="." to="." method="timeout"]
