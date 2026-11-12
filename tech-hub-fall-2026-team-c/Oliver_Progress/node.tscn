@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://byqysfeibq2d"]
+
+[ext_resource type="Script" uid="uid://b66wb1c7dmk2a" path="res://node.gd" id="1_e2u21"]
+[ext_resource type="Script" uid="uid://cutaio7kgjdg7" path="res://''player''.gd" id="1_j2q8x"]
+[ext_resource type="Texture2D" uid="uid://c665y2pv52rcx" path="res://icon.svg" id="1_sy5k4"]
+[ext_resource type="Script" uid="uid://b2b8pkj6o5clx" path="res://projectile.gd" id="3_112p8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiqpj"]
+size = Vector2(115.00014, 113.000046)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjaq8"]
+size = Vector2(28.905151, 41.085693)
+
+[node name="Node" type="Node" unique_id=435150996]
+script = ExtResource("1_e2u21")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=992995748]
+position = Vector2(573, 361.99997)
+scale = Vector2(1.9687501, 1.981493)
+script = ExtResource("1_j2q8x")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1090534164]
+position = Vector2(-0.2539673, 0.25234985)
+scale = Vector2(0.50793594, 0.5046694)
+shape = SubResource("RectangleShape2D_uiqpj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=321874414]
+position = Vector2(1.0639429e-05, 1.5258789e-05)
+rotation = 1.5707964
+scale = Vector2(0.4523812, 0.47312814)
+texture = ExtResource("1_sy5k4")
+
+[node name="Projectile" type="CharacterBody2D" parent="." unique_id=1044669919]
+position = Vector2(341, 235)
+scale = Vector2(1.4414061, 0.27343735)
+collision_layer = 2
+script = ExtResource("3_112p8")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Projectile" unique_id=1352630562]
+shape = SubResource("RectangleShape2D_wjaq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Projectile" unique_id=1817083310]
+position = Vector2(6.198883e-06, -1.5258789e-05)
+scale = Vector2(0.22764224, 0.3392856)
+texture = ExtResource("1_sy5k4")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Projectile" unique_id=832864455]
+position = Vector2(-6.1035156e-05, -3.6571655)
+scale = Vector2(0.693767, 3.6571448)
+rect = Rect2(-20.999908, -5, 41.99991, 12)
+
+[connection signal="screen_exited" from="Projectile/VisibleOnScreenNotifier2D" to="Projectile" method="screen_exited"]
