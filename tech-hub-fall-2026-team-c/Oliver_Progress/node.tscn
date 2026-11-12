@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://byqysfeibq2d"]
 
-[ext_resource type="Script" uid="uid://b66wb1c7dmk2a" path="res://node.gd" id="1_e2u21"]
-[ext_resource type="Script" uid="uid://cutaio7kgjdg7" path="res://''player''.gd" id="1_j2q8x"]
-[ext_resource type="Texture2D" uid="uid://c665y2pv52rcx" path="res://icon.svg" id="1_sy5k4"]
-[ext_resource type="Script" uid="uid://b2b8pkj6o5clx" path="res://projectile.gd" id="3_112p8"]
+[ext_resource type="Script" uid="uid://dvrmnfwin3mjq" path="res://Oliver_Progress/node.gd" id="1_e2u21"]
+[ext_resource type="Script" uid="uid://cfxfk4b58mtw7" path="res://Oliver_Progress/''player''.gd" id="1_j2q8x"]
+[ext_resource type="Texture2D" uid="uid://defj60ps1sg7" path="res://icon.svg" id="1_sy5k4"]
+[ext_resource type="Script" uid="uid://buxuion076xgn" path="res://Oliver_Progress/projectile.gd" id="3_112p8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uiqpj"]
 size = Vector2(115.00014, 113.000046)
