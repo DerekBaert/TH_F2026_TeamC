@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func take_damage (damage):
+func take_damage(damage):
 	health -= damage
-	if (health < 1):
-		print ("die")
+	if(health < 1):
+		print("die")
