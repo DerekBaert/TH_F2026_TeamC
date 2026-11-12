@@ -22,13 +22,12 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1090534164]
 position = Vector2(-0.2539673, 0.25234985)
-scale = Vector2(0.50793594, 0.5046694)
+scale = Vector2(0.5079359, 0.50466937)
 shape = SubResource("RectangleShape2D_uiqpj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=321874414]
-position = Vector2(1.0639429e-05, 1.5258789e-05)
-rotation = 1.5707964
-scale = Vector2(0.4523812, 0.47312814)
+position = Vector2(-0.5079385, 0.2523522)
+scale = Vector2(0.4603173, 0.45341444)
 texture = ExtResource("1_sy5k4")
 
 [node name="Projectile" type="CharacterBody2D" parent="." unique_id=1044669919]
