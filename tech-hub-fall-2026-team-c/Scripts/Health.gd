@@ -1,5 +1,5 @@
 extends Node
-var health
+var health = 10
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,3 +14,5 @@ func take_damage(damage):
 	health -= damage
 	if(health < 1):
 		print("die")
+	else:
+		print(health)
