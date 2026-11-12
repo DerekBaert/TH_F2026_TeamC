@@ -9,6 +9,8 @@ func _physics_process(_delta):
 		projectile_movement()
 	if projectile_shot:
 		$Projectile.position = player_pos
+	else:
+		$Projectile.position = Vector2(-100, -100)
 
 func projectile_movement():
 	projectile_shot = true
