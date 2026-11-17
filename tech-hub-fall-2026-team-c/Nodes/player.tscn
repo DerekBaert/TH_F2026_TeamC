@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cse1b67xx7w6o"]
 
-[ext_resource type="Script" uid="uid://cfxfk4b58mtw7" path="res://Oliver_Progress/''player''.gd" id="1_qlfej"]
+[ext_resource type="Script" uid="uid://cfxfk4b58mtw7" path="res://Oliver_Progress/oliver_player_movement.gd" id="1_qlfej"]
 [ext_resource type="Texture2D" uid="uid://upyhdc4rfvb2" path="res://sprites/wizard.jpg" id="2_pie2b"]
 [ext_resource type="Script" uid="uid://ttjfir3obh3q" path="res://Scripts/Health.gd" id="2_sfp35"]
 

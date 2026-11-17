@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var projectile_shot = false
+var projectile_vector = Vector2(0, 0)
 
 func _physics_process(_delta):
 	if projectile_shot:
@@ -11,6 +12,7 @@ func _physics_process(_delta):
 
 func shoot_projectile():
 	projectile_shot = true
+	
 
 func screen_exited():
 	projectile_shot = false
