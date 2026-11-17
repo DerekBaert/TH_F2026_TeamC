@@ -2,6 +2,7 @@ extends Node
 
 var projectile_shot = false
 var player_pos
+var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
 
 func _physics_process(_delta):
 	player_pos = $"Player".position
