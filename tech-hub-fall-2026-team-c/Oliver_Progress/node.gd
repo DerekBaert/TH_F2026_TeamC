@@ -10,5 +10,6 @@ func _physics_process(_delta):
 	if projectile_shot == false:
 		$Projectile.position = Vector2(-100, -100)
 
+
 func projectile_movement():
 	projectile_shot = true
