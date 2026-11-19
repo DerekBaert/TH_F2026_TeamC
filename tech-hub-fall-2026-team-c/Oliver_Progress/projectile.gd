@@ -10,13 +10,10 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("Projectile") and projectile_shot == false:
 		shoot_projectile()
 
-func get_input():
-	velocity = ((get_global_mouse_position()) - $"../Player".position).normalized() * speed
-
 func shoot_projectile():
 	$".".position = $"../Player".position
 	look_at(get_global_mouse_position())
-	get_input()
+	velocity = ((get_global_mouse_position()) - $"../Player".position).normalized() * speed
 	projectile_shot = true
 
 func screen_exited():
