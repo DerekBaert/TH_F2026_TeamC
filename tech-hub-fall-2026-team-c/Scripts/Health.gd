@@ -4,9 +4,11 @@ extends Node
 var current_health = max_health
 signal health_changed(current_health, max_health)
 signal player_died
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_health = max_health
+	health_changed.emit(current_health, max_health)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

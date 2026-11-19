@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cfxfk4b58mtw7" path="res://Oliver_Progress/oliver_player_movement.gd" id="1_qlfej"]
 [ext_resource type="Texture2D" uid="uid://upyhdc4rfvb2" path="res://sprites/wizard.jpg" id="2_pie2b"]
 [ext_resource type="Script" uid="uid://ttjfir3obh3q" path="res://Scripts/Health.gd" id="2_sfp35"]
+[ext_resource type="Script" uid="uid://bf0a0gothox8p" path="res://Scripts/health_bar.gd" id="4_sfp35"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6kg2q"]
 animations = [{
@@ -19,6 +20,12 @@ animations = [{
 radius = 344.99997
 height = 1059.9999
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfp35"]
+bg_color = Color(0.2697816, 0.2780638, 0.26842958, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hv3sw"]
+bg_color = Color(0, 0.5943981, 0.14066225, 1)
+
 [node name="Player" type="CharacterBody2D" unique_id=1525216172]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_qlfej")
@@ -32,4 +39,19 @@ sprite_frames = SubResource("SpriteFrames_6kg2q")
 animation = &"Idle"
 
 [node name="Sprite2D" type="CollisionShape2D" parent="." unique_id=1000380714]
+position = Vector2(10.000008, 5.000004)
 shape = SubResource("CapsuleShape2D_sh265")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=539729811]
+offset_left = -2665.0
+offset_top = -1465.0
+offset_right = -1540.0001
+offset_bottom = -1285.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/background = SubResource("StyleBoxFlat_sfp35")
+theme_override_styles/fill = SubResource("StyleBoxFlat_hv3sw")
+script = ExtResource("4_sfp35")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=991416238]
+
+[connection signal="health_changed" from="Health" to="ProgressBar" method="_on_health_health_changed"]
