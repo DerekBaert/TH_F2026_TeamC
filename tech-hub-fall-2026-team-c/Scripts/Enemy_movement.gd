@@ -1,15 +1,17 @@
 extends RigidBody2D
 
 var move : Vector2
-@export var speed = 15
+@export var speed = 60
 var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = %player
+	player = NodeRefs.player_ref
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	move = position - player.position 
+	move = player.position - position
+	move = move.normalized()
+	linear_velocity += ((move * speed) * delta)
 	

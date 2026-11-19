@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b2xeg5sdx4fbb"]
 
-[ext_resource type="Script" uid="uid://cyml5y8elp6e" path="res://Scripts/Enemy_movement.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://defj60ps1sg7" path="res://icon.svg" id="1_7k104"]
+[ext_resource type="Script" uid="uid://cyml5y8elp6e" path="res://Scripts/Enemy_movement.gd" id="1_hrxw6"]
+[ext_resource type="Texture2D" uid="uid://defj60ps1sg7" path="res://icon.svg" id="2_jpxen"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6kg2q"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7k104")
+"texture": ExtResource("2_jpxen")
 }],
 "loop": 1,
 "name": &"Enemy_test",
@@ -19,7 +19,7 @@ radius = 60.207973
 
 [node name="Enemy" type="RigidBody2D" unique_id=1937437981]
 gravity_scale = 0.0
-script = ExtResource("1_4gyqm")
+script = ExtResource("1_hrxw6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1356417205]
 sprite_frames = SubResource("SpriteFrames_6kg2q")

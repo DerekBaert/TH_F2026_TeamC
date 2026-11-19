@@ -29,6 +29,7 @@ bg_color = Color(0, 0.5943981, 0.14066225, 1)
 [node name="Player" type="CharacterBody2D" unique_id=1525216172]
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_qlfej")
+speed = null
 
 [node name="Health" type="Node2D" parent="." unique_id=233515810]
 scale = Vector2(0.99999994, 0.99999994)

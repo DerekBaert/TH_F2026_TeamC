@@ -2,12 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://cse1b67xx7w6o" path="res://Nodes/player.tscn" id="1_h2ymo"]
 [ext_resource type="PackedScene" uid="uid://bovkgj6kyvm7w" path="res://Nodes/damage_test.tscn" id="2_cfxlj"]
+[ext_resource type="PackedScene" uid="uid://b2xeg5sdx4fbb" path="res://Nodes/enemy.tscn" id="3_cfxlj"]
 
 [node name="Main" type="Node2D" unique_id=1359922582]
 
 [node name="Player" parent="." unique_id=675699041 instance=ExtResource("1_h2ymo")]
 position = Vector2(512, 296)
+speed = 0
 
 [node name="Damage_test" parent="." unique_id=543012519 instance=ExtResource("2_cfxlj")]
 position = Vector2(415.99997, 91.99999)
 scale = Vector2(0.2, 0.2)
+
+[node name="Enemy" parent="." unique_id=1937437981 instance=ExtResource("3_cfxlj")]
+position = Vector2(202, 129)
