@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 300
+var speed = 400
 var projectile_shot = false
 
 func _physics_process(_delta):

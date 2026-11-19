@@ -15,7 +15,7 @@ size = Vector2(28.905151, 41.085693)
 script = ExtResource("1_e2u21")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=992995748]
-position = Vector2(666, 410.99994)
+position = Vector2(547, 341)
 scale = Vector2(1.9687501, 1.981493)
 script = ExtResource("1_j2q8x")
 metadata/_edit_group_ = true
@@ -31,7 +31,7 @@ scale = Vector2(0.4603173, 0.45341444)
 texture = ExtResource("1_sy5k4")
 
 [node name="Projectile" type="CharacterBody2D" parent="." unique_id=1044669919]
-position = Vector2(-94, -74)
+position = Vector2(-114, -96)
 scale = Vector2(1.4414061, 0.27343735)
 collision_layer = 2
 collision_mask = 2
