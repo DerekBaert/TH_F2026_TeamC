@@ -3,7 +3,6 @@ extends CharacterBody2D
 @export var speed : int
 
 func _ready():
-	NodeRefs.player_ref = self
 	speed = 500
 
 func get_input():
