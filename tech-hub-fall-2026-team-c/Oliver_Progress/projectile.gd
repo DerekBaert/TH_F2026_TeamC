@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var _animated_sprite = $"Magic Sprites"
-var speed = 1000
+var speed = 1000 # Projectile speed
 var projectile_shot = false
 var current_mouse_pos = Vector2.ZERO
 var offscreen
@@ -16,14 +16,18 @@ func _physics_process(_delta):
 		velocity = ((get_global_mouse_position()) - $"../Player".position).normalized() * speed
 		current_mouse_pos = (get_global_mouse_position())
 	if projectile_shot == false:
-		#if _animated_sprite == fire:
+		# if _animated_sprite == fire:
 		_animated_sprite.play("fire_throw")
+		# elif _animated_sprite == ice:
+		# _animated_sprite.play("ice_throw")
+		# else:
+		# _animated_sprite.play("elec_throw")
 		position = offscreen
-	if (current_mouse_pos - position).length() < 10 and animation_played == false:
-		fireball_play()
+	if (current_mouse_pos - position).length() < 10 and animation_played == false: # collision check for mouse
+		fireball_animation()
 		animation_played = true
 
-func fireball_play():
+func fireball_animation():
 	velocity = Vector2.ZERO
 	_animated_sprite.play("fire_explode")
 	await get_tree().create_timer(0.5).timeout
