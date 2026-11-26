@@ -4,11 +4,12 @@ extends CharacterBody2D
 var speed = 600
 var projectile_shot = false
 var current_mouse_pos = Vector2.ZERO
-var offscreen = Vector2(-100, -100)
+var offscreen
 var animation_played = false
 
 func _physics_process(_delta):
 	move_and_slide()
+	offscreen = (Vector2(-1000, -1000) + $"../Player".position)
 	if Input.is_action_just_pressed("Projectile") and projectile_shot == false:
 		position = $"../Player".position
 		projectile_shot = true
