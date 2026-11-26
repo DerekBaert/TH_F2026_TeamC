@@ -12,3 +12,7 @@ func get_input():
 func _physics_process(_delta):
 	get_input()
 	move_and_slide()
+	if Input.is_action_just_pressed("sprint"):
+		speed = 900
+	if Input.is_action_just_released("sprint"):
+		speed = 500
