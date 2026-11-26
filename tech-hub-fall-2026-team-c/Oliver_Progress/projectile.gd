@@ -4,6 +4,8 @@ extends CharacterBody2D
 var speed = 600
 var projectile_shot = false
 var current_mouse_pos = Vector2.ZERO
+var offscreen = Vector2(-100, -100)
+var animation_played = false
 
 func _physics_process(_delta):
 	move_and_slide()
@@ -15,10 +17,15 @@ func _physics_process(_delta):
 		_animated_sprite.play("throw")
 	if projectile_shot == false:
 		_animated_sprite.play("throw")
-		position = Vector2(-100, -100)
-	if (current_mouse_pos - position).length() < 5:
-		velocity = Vector2.ZERO
-		_animated_sprite.play("explode")
-		await get_tree().create_timer(0.5).timeout
-		projectile_shot = false
-		print("animation_done")
+		position = offscreen
+	if (current_mouse_pos - position).length() < 5 and animation_played == false:
+		fireball_play()
+		animation_played = true
+
+func fireball_play():
+	velocity = Vector2.ZERO
+	_animated_sprite.play("explode")
+	await get_tree().create_timer(0.5).timeout
+	projectile_shot = false
+	position = offscreen
+	animation_played = false
