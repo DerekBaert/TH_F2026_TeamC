@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cyswom6wlvats"]
-
-[node name="Timer" type="Timer" unique_id=128801201]
-wait_time = 0.5
-
-[connection signal="timeout" from="." to="." method="timeout"]

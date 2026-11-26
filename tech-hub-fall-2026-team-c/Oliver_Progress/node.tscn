@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://bpl8jbx3rxs77" path="res://sprites/dally left moving sprite sheet.png" id="4_2onng"]
 [ext_resource type="Texture2D" uid="uid://bmcgmug6ukqkh" path="res://sprites/dally right moving sprite sheet.png" id="5_piuf3"]
 [ext_resource type="Texture2D" uid="uid://1y1n1hcisvou" path="res://sprites/dally behind moving sprite sheet.png" id="6_xnkyf"]
-[ext_resource type="Script" uid="uid://p2dhav5ukg04" path="res://Oliver_Progress/sprite_2d.gd" id="7_2onng"]
+[ext_resource type="Script" uid="uid://p2dhav5ukg04" path="res://Oliver_Progress/Dally_Sprites.gd" id="7_2onng"]
 [ext_resource type="Texture2D" uid="uid://c4wabfn0xjmuc" path="res://sprites/revamped fire attack sprite sheet.png" id="9_2onng"]
+[ext_resource type="Texture2D" uid="uid://bqn5p8s22vnqj" path="res://sprites/electric attack sprite sheet.png" id="9_xnkyf"]
+[ext_resource type="Texture2D" uid="uid://dxoaxbh81x1ad" path="res://sprites/GRASS.png" id="10_piuf3"]
+[ext_resource type="Texture2D" uid="uid://bim550fywmr80" path="res://sprites/ice attack sprite sheet.png" id="11_m8tqy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uiqpj"]
 size = Vector2(73.00009, 173.00021)
@@ -149,7 +152,19 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b0f1q"]
-radius = 20.847744
+radius = 34.915726
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54lbs"]
+atlas = ExtResource("9_xnkyf")
+region = Rect2(0, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puvie"]
+atlas = ExtResource("9_xnkyf")
+region = Rect2(250, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6n7m"]
+atlas = ExtResource("9_xnkyf")
+region = Rect2(500, 0, 250, 250)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_piuf3"]
 atlas = ExtResource("9_2onng")
@@ -167,8 +182,41 @@ region = Rect2(500, 0, 250, 250)
 atlas = ExtResource("9_2onng")
 region = Rect2(0, 0, 250, 250)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_clmyw"]
+atlas = ExtResource("11_m8tqy")
+region = Rect2(0, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1f7i"]
+atlas = ExtResource("11_m8tqy")
+region = Rect2(250, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqqq8"]
+atlas = ExtResource("11_m8tqy")
+region = Rect2(500, 0, 250, 250)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srv2h"]
+atlas = ExtResource("11_m8tqy")
+region = Rect2(0, 0, 250, 250)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wjaq8"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54lbs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puvie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6n7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puvie")
+}],
+"loop": 1,
+"name": &"elec_throw",
+"speed": 5.5
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_piuf3")
@@ -180,7 +228,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_bi7h6")
 }],
 "loop": 1,
-"name": &"explode",
+"name": &"fire_explode",
 "speed": 5.5
 }, {
 "frames": [{
@@ -188,8 +236,33 @@ animations = [{
 "texture": SubResource("AtlasTexture_n2mt3")
 }],
 "loop": 1,
-"name": &"throw",
-"speed": 5.0
+"name": &"fire_throw",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clmyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1f7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqqq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1f7i")
+}],
+"loop": 1,
+"name": &"ice_explode",
+"speed": 5.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srv2h")
+}],
+"loop": 1,
+"name": &"ice_throw",
+"speed": 1.0
 }]
 
 [node name="Node" type="Node" unique_id=1539186432]
@@ -206,7 +279,7 @@ position = Vector2(0.2539673, -2.7756653)
 scale = Vector2(0.50793564, 0.50466913)
 shape = SubResource("RectangleShape2D_uiqpj")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="Player" unique_id=643764736]
+[node name="Dally Sprites" type="AnimatedSprite2D" parent="Player" unique_id=643764736]
 position = Vector2(0, 0.25234985)
 scale = Vector2(0.46031725, 0.4534144)
 sprite_frames = SubResource("SpriteFrames_uiqpj")
@@ -231,10 +304,15 @@ scale = Vector2(1, 0.99999994)
 skew = 1.1554079
 shape = SubResource("CircleShape2D_b0f1q")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="Projectile" unique_id=538556385]
+[node name="Magic Sprites" type="AnimatedSprite2D" parent="Projectile" unique_id=538556385]
 position = Vector2(3.4688396, 7.314251)
 scale = Vector2(0.11104604, 0.5792431)
 sprite_frames = SubResource("SpriteFrames_wjaq8")
-animation = &"explode"
-frame = 2
-frame_progress = 0.14221749
+animation = &"fire_throw"
+frame_progress = 0.22677219
+
+[node name="Grass" type="Sprite2D" parent="." unique_id=404539181]
+z_index = -10
+position = Vector2(541, 328)
+scale = Vector2(5.176, 3.2879999)
+texture = ExtResource("10_piuf3")
