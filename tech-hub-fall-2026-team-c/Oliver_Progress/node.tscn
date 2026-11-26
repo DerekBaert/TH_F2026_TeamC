@@ -313,6 +313,6 @@ frame_progress = 0.22677219
 
 [node name="Grass" type="Sprite2D" parent="." unique_id=404539181]
 z_index = -10
-position = Vector2(541, 328)
-scale = Vector2(5.176, 3.2879999)
+position = Vector2(548.00006, 384.00003)
+scale = Vector2(6.372, 4.4079995)
 texture = ExtResource("10_piuf3")
