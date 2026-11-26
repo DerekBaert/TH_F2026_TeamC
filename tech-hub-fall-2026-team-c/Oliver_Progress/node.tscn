@@ -288,6 +288,9 @@ script = ExtResource("7_2onng")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=981974424]
 scale = Vector2(2.539682, 0.47842702)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 
 [node name="Projectile" type="CharacterBody2D" parent="." unique_id=1044669919]
 position = Vector2(-88.00001, -1.0000153)
