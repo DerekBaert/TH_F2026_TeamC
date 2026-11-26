@@ -21,5 +21,4 @@ func _physics_process(_delta):
 		_animated_sprite.play("explode")
 		await get_tree().create_timer(0.5).timeout
 		projectile_shot = false
-		await get_tree().create_timer(0.5).timeout
 		print("animation_done")
