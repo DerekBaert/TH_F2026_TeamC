@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var _animated_sprite = $"Magic Sprites"
-var speed = 600
+var speed = 1000
 var projectile_shot = false
 var current_mouse_pos = Vector2.ZERO
 var offscreen
@@ -19,7 +19,7 @@ func _physics_process(_delta):
 		#if _animated_sprite == fire:
 		_animated_sprite.play("fire_throw")
 		position = offscreen
-	if (current_mouse_pos - position).length() < 5 and animation_played == false:
+	if (current_mouse_pos - position).length() < 10 and animation_played == false:
 		fireball_play()
 		animation_played = true
 
