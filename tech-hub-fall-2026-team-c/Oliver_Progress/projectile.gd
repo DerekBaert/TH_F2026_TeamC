@@ -15,8 +15,8 @@ func _physics_process(_delta):
 		projectile_shot = true
 		velocity = ((get_global_mouse_position()) - $"../Player".position).normalized() * speed
 		current_mouse_pos = (get_global_mouse_position())
-		_animated_sprite.play("fire_throw")
 	if projectile_shot == false:
+		#if _animated_sprite == fire:
 		_animated_sprite.play("fire_throw")
 		position = offscreen
 	if (current_mouse_pos - position).length() < 5 and animation_played == false:
